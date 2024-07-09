@@ -1,0 +1,36 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Room Booking</h1>
+        <div class="room-list">
+            {% for i in u %}
+            {% if i.startdate is NULL %}
+            <div class="room">
+                <h2>Room {{i.no}}</h2>
+                <p>Capacity: {{i.capacity}} people</p>
+                <label for="duration101">Duration:</label>
+            <form action="booking/{{i.id}}">
+                <label>Start Date</label>
+                <input type="date"  name="stdate">
+                <label>End Date</label>
+                <input type="date"  name="eddate">
+                <label>Name of Guest</label>
+                <input type="text" name="gn"required>
+                <button>Book Now</button>
+            </form>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+[

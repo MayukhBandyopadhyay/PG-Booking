@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <table>
+            <tr><td>name</td><td>number</td><td>capacity</td><td>startdate</td><td>enddate</td></tr>
+            {% for i in u %}
+            <tr><td>{{i.name}}</td><td>{{i.no}</td><td>{{i.capacity}}</td><td>{{i.startdate}}</td><td>{{i.enddate}}</td><td><a href="dele/{{i.id}}">Delete</a></td></tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
